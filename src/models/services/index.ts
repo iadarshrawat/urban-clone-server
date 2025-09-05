@@ -1,5 +1,5 @@
-import { boolean } from "joi/lib";
-import mongoose from "mongoose";
+import { boolean } from 'joi/lib';
+import mongoose from 'mongoose';
 
 const services = new mongoose.Schema({
     _categoryId: {
@@ -7,22 +7,22 @@ const services = new mongoose.Schema({
         ref: ['service']
     },
     name: {
-        type: String,
+        type: String
     },
     description: {
-        type: String,
+        type: String
     },
     price: {
-        type: String,
+        type: String
     },
     duration: {
-        type: Number,
+        type: Number
     },
     isActive: {
         type: Boolean,
         default: true,
-        enum: ["true", "false"]
+        enum: ['true', 'false']
     }
-}, {timestamps: true})
+}, {timestamps: true});
 
 const SERVICES = mongoose.model('SERVICES', services);

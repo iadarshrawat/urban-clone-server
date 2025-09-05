@@ -39,7 +39,7 @@
     "google-auth-library": "^8.7.0",
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^8.17.2",
+    "mongoose": "^5.13.23",
     "mongoose-intl": "^3.1.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
@@ -60,7 +60,8 @@
     "@types/joi": "^17.2.3",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/morgan": "^1.9.2",
-    "@types/nodemailer": "^6.4.17",
+    "@types/node": "^24.3.0",
+    "@types/nodemailer": "^6.4.19",
     "@types/uuid": "^10.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"

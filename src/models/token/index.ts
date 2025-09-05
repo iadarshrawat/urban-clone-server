@@ -8,4 +8,4 @@ const tokenSchema = new Schema({
   expiredAt: { type: Date }
 });
 
-export const TOKEN = model('Token', tokenSchema); 
+export const TOKEN = model('Token', tokenSchema);

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const customerSchema = new mongoose.Schema({
     address: {
@@ -7,6 +7,6 @@ const customerSchema = new mongoose.Schema({
     walletBalance: {
         type: Number
     }
-}, {timestamps: true})
+}, {timestamps: true});
 
 export const CUSTOMER = mongoose.model('CUSTOMER', customerSchema);

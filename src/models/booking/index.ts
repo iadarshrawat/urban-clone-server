@@ -1,19 +1,19 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const bookingSchema = new mongoose.Schema({
 
     _customerId: {
-        type: String,
+        type: String
     },
     _partnerId: {
-        type: String,
+        type: String
     },
     scheduledAt: {
         type: Date
     },
     status: {
         type: String,
-        default: "pending",
+        default: 'pending',
         enum: ['pending', 'confirmed', 'in-progress', 'completed', 'cancelled']
     },
     paymentStatus: {
@@ -27,6 +27,6 @@ const bookingSchema = new mongoose.Schema({
     totalAmount: {
         type: Number
     }
-}, {timestamps: true})
+}, {timestamps: true});
 
 export const BOOKING = mongoose.model('BOOKING', bookingSchema);

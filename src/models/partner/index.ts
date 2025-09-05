@@ -2,13 +2,13 @@ import mongoose from 'mongoose';
 
 const partnerSchema = new mongoose.Schema({
     userId: {
-        type: String,
+        type: String
     },
     kycDocument: {
         type: String
     },
     serviceOffered: {
-        type: String,
+        type: String
     },
     experienceYears: {
         type: Number
@@ -18,10 +18,10 @@ const partnerSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        default: "pending",
-        enum: ["pending", "approved", "blocked"]
+        default: 'pending',
+        enum: ['pending', 'approved', 'blocked']
     }
 
 }, { timestamps: true });
 
-export const PARTNER = mongoose.model('PARTNER', partnerSchema); 
+export const PARTNER = mongoose.model('PARTNER', partnerSchema);

@@ -1,15 +1,15 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const reviewSchema = new mongoose.Schema({
 
     _bookingId: {
-        type: String,
+        type: String
     },
     _customerId: {
-        type: String,
+        type: String
     },
     _partnerId: {
-        type: String,
+        type: String
     },
     rating: {
         type: Number,
@@ -18,7 +18,7 @@ const reviewSchema = new mongoose.Schema({
     },
     comment: {
         type: String
-    },
-}, {timestamps: true})
+    }
+}, {timestamps: true});
 
-export const REVIEWS = mongoose.model('REVIEWS', reviewSchema)
+export const REVIEWS = mongoose.model('REVIEWS', reviewSchema);

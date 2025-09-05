@@ -8,5 +8,4 @@ router.use('/auth', authController);
 router.use('/categories', categoriesController);
 router.use('/services', serviceController);
 
-
 export { router };

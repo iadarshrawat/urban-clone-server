@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const paymentSchema = new mongoose.Schema({
 
@@ -14,16 +14,16 @@ const paymentSchema = new mongoose.Schema({
     status: {
         type: String,
         default: 'PENDING',
-        enum: ['PENDING', 'SUCCESS', 'FAILED', 'REFUNDED'],
+        enum: ['PENDING', 'SUCCESS', 'FAILED', 'REFUNDED']
     },
     transactionId: {
-        type: String,
+        type: String
     },
     method: {
         type: String,
         default: 'CARD',
         enum: ['CARD', 'UPI', 'WALLET']
     }
-}, {timestamps: true})
+}, {timestamps: true});
 
 export const PAYMENT = mongoose.model('PAYMENT', paymentSchema);
