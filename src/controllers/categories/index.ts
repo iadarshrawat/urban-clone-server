@@ -22,6 +22,7 @@ router.get('/', (req: Request, res: Response) => {
 router.post('/', async (req: Request, res: Response) => {
     try {
         const {name, description, icon} = req.body;
+        console.log(name, description, icon);
         if(!name || !description || !icon) {
             return sendResponse(res, 400, MESSAGE.FIELD_REQUIRED)
         }

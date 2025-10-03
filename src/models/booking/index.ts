@@ -1,32 +1,37 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const bookingSchema = new mongoose.Schema({
-
-    _customerId: {
-        type: String
+const BookingSchema = new mongoose.Schema(
+  {
+    _user_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
     },
-    _partnerId: {
-        type: String
+    _partner_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Partner",
     },
-    scheduledAt: {
-        type: Date
+    _service_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Service",
     },
+    _payment_id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Payment",
+    },
+    booking_time: Date,
     status: {
-        type: String,
-        default: 'pending',
-        enum: ['pending', 'confirmed', 'in-progress', 'completed', 'cancelled']
+      type: String,
+      enum: ["PENDING", "CONFIRMED", "COMPLETED", "CANCELLED"],
+      default: "PENDING",
     },
-    paymentStatus: {
-        type: String,
-        default: 'PENDING',
-        enum: ['PENDING', 'PAID', 'REFUNDED']
+    address: String,
+    special_instructions: String,
+    created_at: {
+      type: Date,
+      default: Date.now,
     },
-    address: {
-        type: String
-    },
-    totalAmount: {
-        type: Number
-    }
-}, {timestamps: true});
+  },
+  { timestamps: true }
+);
 
-export const BOOKING = mongoose.model('BOOKING', bookingSchema);
+export const BOOKING = mongoose.model("BOOKING", BookingSchema);

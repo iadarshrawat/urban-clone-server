@@ -1,28 +1,35 @@
-import { boolean } from 'joi/lib';
-import mongoose from 'mongoose';
+import mongoose, { Types } from "mongoose";
 
-const services = new mongoose.Schema({
-    _categoryId: {
-        type: String,
-        ref: ['service']
-    },
-    name: {
-        type: String
-    },
-    description: {
-        type: String
-    },
-    price: {
-        type: String
-    },
-    duration: {
-        type: Number
-    },
-    isActive: {
-        type: Boolean,
-        default: true,
-        enum: ['true', 'false']
-    }
-}, {timestamps: true});
+const ServiceSchema = new mongoose.Schema({
+  _categoryId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Categories",
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    requried: true,
+  },
+  duration_minutes: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: String,
+    default: "ACTIVE",
+    enum: ["ACTIVE", "INACTIVE", "DELETED"],
+  },
+  created_by_admin_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Admin",
+  },
+});
 
-const SERVICES = mongoose.model('SERVICES', services);
+const SERVICES = mongoose.model("SERVICES", ServiceSchema);

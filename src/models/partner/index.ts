@@ -1,27 +1,43 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const partnerSchema = new mongoose.Schema({
-    userId: {
-        type: String
+const PartnerSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
     },
-    kycDocument: {
-        type: String
+    email: {
+      type: String,
+      unique: true,
     },
-    serviceOffered: {
-        type: String
+    phone: {
+      type: Number,
+      required: true,
     },
-    experienceYears: {
-        type: Number
+    address: {
+      type: String,
+      required: true,
     },
-    rating: {
-        type: Number
+    service_area: {
+      type: String,
+      required: true,
     },
+    certifications: [String],
+    qualifications: [String],
+    availability_schedule: Object,
+    commission_rate: Number,
+    performance_metrics: Object,
     status: {
-        type: String,
-        default: 'pending',
-        enum: ['pending', 'approved', 'blocked']
-    }
+      type: String,
+      enum: ["pending", "approved", "blocked"],
+      default: "pending",
+    },
+    joined_at: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  { timestamps: true }
+);
 
-}, { timestamps: true });
-
-export const PARTNER = mongoose.model('PARTNER', partnerSchema);
+export const PARTNER = mongoose.model("PARTNER", PartnerSchema);
